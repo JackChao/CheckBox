@@ -18,6 +18,6 @@
         <!--被选中-->
         <attr name="cb_isChecked" format="boolean"/>
         <!--展示 对勾 需要的时间长度-->
-        <attr name="cb_checkMarkerShowDuration" format="integer"/>
+        <attr name="cb_checkMarkerDuration" format="integer"/>
     </declare-styleable>
 </resources>

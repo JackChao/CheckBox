@@ -108,7 +108,7 @@ public class CheckBox extends View {
     /**
      * 展示 对勾 需要的时间长度
      */
-    private int checkMarkerShowDuration;
+    private int checkMarkerDuration;
     private ObjectAnimator checkMarkerShowAnimator;
     private ObjectAnimator checkMarkerDismissAnimator;
     private OnCheckChangeListener onCheckChangeListener;
@@ -130,7 +130,7 @@ public class CheckBox extends View {
         checkMarkColor = typedArray.getColor(R.styleable.CheckBox_cb_checkMarkColor, Color.parseColor("#FF5722"));
         checkMarkWidth = typedArray.getDimension(R.styleable.CheckBox_cb_checkMarkWidth, dp2px(4));
         isChecked = typedArray.getBoolean(R.styleable.CheckBox_cb_isChecked, false);
-        checkMarkerShowDuration = typedArray.getInteger(R.styleable.CheckBox_cb_checkMarkerShowDuration, 400);
+        checkMarkerDuration = typedArray.getInteger(R.styleable.CheckBox_cb_checkMarkerShowDuration, 400);
         typedArray.recycle();
         defaultSize = (int) dp2px(48);
         /*外边框*/
@@ -165,11 +165,11 @@ public class CheckBox extends View {
         checkMarkerProgress = (isChecked) ? 1F : 0F;
         /*动画*/
         checkMarkerShowAnimator = ObjectAnimator.ofFloat(this, "checkMarkerProgress", 0F, 1F);
-        checkMarkerShowAnimator.setDuration(checkMarkerShowDuration);
+        checkMarkerShowAnimator.setDuration(checkMarkerDuration);
         checkMarkerShowAnimator.addListener(new MySimpleAnimatorListener("checkMarkerShowAnimator"));
 
         checkMarkerDismissAnimator = ObjectAnimator.ofFloat(this, "checkMarkerProgress", 1F, 0F);
-        checkMarkerDismissAnimator.setDuration(checkMarkerShowDuration);
+        checkMarkerDismissAnimator.setDuration(checkMarkerDuration);
         checkMarkerDismissAnimator.addListener(new MySimpleAnimatorListener("checkMarkerDismissAnimator"));
         setOnClickListener(new MyOnClickListener());
     }
@@ -427,6 +427,15 @@ public class CheckBox extends View {
      */
     public CheckBox checkMarkColor(String checkMarkColor) {
         this.innerCheckedColor = Color.parseColor(checkMarkColor);
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 动画的过渡时间
+     */
+    public CheckBox checkMarkerDuration(int checkMarkerDuration) {
+        this.checkMarkerDuration = checkMarkerDuration;
         invalidate();
         return this;
     }
