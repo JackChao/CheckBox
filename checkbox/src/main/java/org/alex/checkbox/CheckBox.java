@@ -113,6 +113,7 @@ public class CheckBox extends View {
     private ObjectAnimator checkMarkerDismissAnimator;
     private OnCheckChangeListener onCheckChangeListener;
     private static final String KEY_IS_CHECKED = "IS_CHECKED";
+
     public CheckBox(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView(attrs);
@@ -186,8 +187,8 @@ public class CheckBox extends View {
     /**
      * 设置 被选择
      */
-    public void setChecked(boolean isChecked) {
-        setChecked(isChecked, false);
+    public CheckBox setChecked(boolean isChecked) {
+        return setChecked(isChecked, false);
     }
 
     /**
@@ -195,27 +196,29 @@ public class CheckBox extends View {
      *
      * @param canAnim 使用动画
      */
-    public void setChecked(boolean isChecked, boolean canAnim) {
+    public CheckBox setChecked(boolean isChecked, boolean canAnim) {
         this.isChecked = isChecked;
         if (onCheckChangeListener != null) {
             onCheckChangeListener.OnCheckChange(isChecked, CheckBox.this);
         }
         invalidate();
         if (!canAnim) {
-            return;
+            return this;
         }
         if (isChecked) {
             checkMarkerShowAnimator.start();
         } else {
             checkMarkerDismissAnimator.start();
         }
+        return this;
     }
 
     /**
      * 切换 被选择
      */
-    public void toggleChecked() {
+    public CheckBox toggleChecked() {
         toggleChecked(false);
+        return this;
     }
 
     /**
@@ -223,13 +226,15 @@ public class CheckBox extends View {
      *
      * @param canAnim 使用动画
      */
-    public void toggleChecked(boolean canAnim) {
+    public CheckBox toggleChecked(boolean canAnim) {
         this.isChecked = !this.isChecked;
         setChecked(isChecked, canAnim);
+        return this;
     }
 
-    public void setOnCheckChangeListener(OnCheckChangeListener onCheckChangeListener) {
+    public CheckBox setOnCheckChangeListener(OnCheckChangeListener onCheckChangeListener) {
         this.onCheckChangeListener = onCheckChangeListener;
+        return this;
     }
 
     /**
@@ -329,6 +334,103 @@ public class CheckBox extends View {
         this.checkMarkerProgress = checkMarkerProgress;
         invalidate();
     }
+
+    /**
+     * 外边矩形宽度，单位 dp
+     */
+    public CheckBox outBorderWidth(float outBorderWidth) {
+        this.outBorderWidth = dp2px(outBorderWidth);
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 外边矩形颜色
+     */
+    public CheckBox outBorderColor(int outBorderColor) {
+        this.outBorderColor = outBorderColor;
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 外边矩形颜色
+     */
+    public CheckBox outBorderColor(String outBorderColor) {
+        this.outBorderColor = Color.parseColor(outBorderColor);
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 外边矩形圆角化半径
+     */
+    public CheckBox outBorderRadius(float outBorderRadius) {
+        this.outBorderRadius = dp2px(outBorderRadius);
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 内置矩形默认颜色
+     */
+    public CheckBox innerNormalColor(int innerNormalColor) {
+        this.innerNormalColor = innerNormalColor;
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 内置矩形默认颜色
+     */
+    public CheckBox innerNormalColor(String innerNormalColor) {
+        this.innerNormalColor = Color.parseColor(innerNormalColor);
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 内置矩形Checked颜色
+     */
+    public CheckBox innerCheckedColor(int innerCheckedColor) {
+        this.innerCheckedColor = innerCheckedColor;
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 内置矩形Checked颜色
+     */
+    public CheckBox innerCheckedColor(String innerCheckedColor) {
+        this.innerCheckedColor = Color.parseColor(innerCheckedColor);
+        invalidate();
+        return this;
+    }
+
+    public CheckBox checkMarkWidth(float checkMarkWidth) {
+        this.checkMarkWidth = dp2px(checkMarkWidth);
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 对勾颜色
+     */
+    public CheckBox checkMarkColor(int checkMarkColor) {
+        this.innerCheckedColor = checkMarkColor;
+        invalidate();
+        return this;
+    }
+
+    /**
+     * 对勾颜色
+     */
+    public CheckBox checkMarkColor(String checkMarkColor) {
+        this.innerCheckedColor = Color.parseColor(checkMarkColor);
+        invalidate();
+        return this;
+    }
+
     @Override
     protected Parcelable onSaveInstanceState() {
         Bundle bundle = new Bundle();
