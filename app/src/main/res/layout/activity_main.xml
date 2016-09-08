@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.alex.checkbox.demo.MainActivity">
+
+    <org.alex.checkbox.CheckBox
+        xmlns:CheckBox="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cb_1"
+        android:layout_width="20dp"
+        android:layout_height="280dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        CheckBox:cb_checkMarkColor="#FF5722"
+        CheckBox:cb_checkMarkWidth="2dp"
+        CheckBox:cb_checkMarkerShowDuration="200"
+        CheckBox:cb_innerCheckedColor="#AAAAAA"
+        CheckBox:cb_innerNormalColor="#FFFFFF"
+        CheckBox:cb_isChecked="true"
+        CheckBox:cb_outBorderColor="#CCCCCC"
+        CheckBox:cb_outBorderRadius="2dp"
+        CheckBox:cb_outBorderWidth="1dp"/>
+
+    <org.alex.checkbox.CheckBox
+        xmlns:CheckBox="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cb_2"
+        android:layout_width="40dp"
+        android:layout_height="280dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        CheckBox:cb_checkMarkColor="#FF5722"
+        CheckBox:cb_checkMarkWidth="2dp"
+        CheckBox:cb_checkMarkerShowDuration="200"
+        CheckBox:cb_innerCheckedColor="#AAAAAA"
+        CheckBox:cb_innerNormalColor="#FFFFFF"
+        CheckBox:cb_isChecked="false"
+        CheckBox:cb_outBorderColor="#CCCCCC"
+        CheckBox:cb_outBorderRadius="200dp"
+        CheckBox:cb_outBorderWidth="1dp"/>
+
+    <org.alex.checkbox.CheckBox
+        xmlns:CheckBox="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cb_3"
+        android:layout_width="60dp"
+        android:layout_height="280dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        CheckBox:cb_checkMarkColor="#FF5722"
+        CheckBox:cb_checkMarkWidth="2dp"
+        CheckBox:cb_checkMarkerShowDuration="200"
+        CheckBox:cb_innerCheckedColor="#88AAAAAA"
+        CheckBox:cb_innerNormalColor="#22FFFFFF"
+        CheckBox:cb_isChecked="true"
+        CheckBox:cb_outBorderColor="#AAAAAA"
+        CheckBox:cb_outBorderRadius="2dp"
+        CheckBox:cb_outBorderWidth="2dp"/>
+
+    <Button
+        android:id="@+id/bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="点我"/>
+</LinearLayout>
