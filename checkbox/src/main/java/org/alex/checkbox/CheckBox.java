@@ -130,7 +130,7 @@ public class CheckBox extends View {
         checkMarkColor = typedArray.getColor(R.styleable.CheckBox_cb_checkMarkColor, Color.parseColor("#FF5722"));
         checkMarkWidth = typedArray.getDimension(R.styleable.CheckBox_cb_checkMarkWidth, dp2px(4));
         isChecked = typedArray.getBoolean(R.styleable.CheckBox_cb_isChecked, false);
-        checkMarkerDuration = typedArray.getInteger(R.styleable.CheckBox_cb_checkMarkerShowDuration, 400);
+        checkMarkerDuration = typedArray.getInteger(R.styleable.CheckBox_cb_checkMarkerDuration, 400);
         typedArray.recycle();
         defaultSize = (int) dp2px(48);
         /*外边框*/

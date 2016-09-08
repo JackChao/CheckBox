@@ -18,12 +18,12 @@
         CheckBox:cb_checkMarkColor="#FF5722"
         CheckBox:cb_checkMarkWidth="2dp"
         CheckBox:cb_checkMarkerDuration="200"
-        CheckBox:cb_innerCheckedColor="#AAAAAA"
+        CheckBox:cb_innerCheckedColor="#55AAAAAA"
         CheckBox:cb_innerNormalColor="#FFFFFF"
         CheckBox:cb_isChecked="true"
         CheckBox:cb_outBorderColor="#CCCCCC"
         CheckBox:cb_outBorderRadius="2dp"
-        CheckBox:cb_outBorderWidth="1dp"/>
+        CheckBox:cb_outBorderWidth="2dp"/>
 
     <org.alex.checkbox.CheckBox
         xmlns:CheckBox="http://schemas.android.com/apk/res-auto"
@@ -35,12 +35,12 @@
         CheckBox:cb_checkMarkColor="#FF5722"
         CheckBox:cb_checkMarkWidth="2dp"
         CheckBox:cb_checkMarkerDuration="200"
-        CheckBox:cb_innerCheckedColor="#AAAAAA"
+        CheckBox:cb_innerCheckedColor="#66AAAAAA"
         CheckBox:cb_innerNormalColor="#FFFFFF"
         CheckBox:cb_isChecked="false"
         CheckBox:cb_outBorderColor="#CCCCCC"
         CheckBox:cb_outBorderRadius="200dp"
-        CheckBox:cb_outBorderWidth="1dp"/>
+        CheckBox:cb_outBorderWidth="2dp"/>
 
     <org.alex.checkbox.CheckBox
         xmlns:CheckBox="http://schemas.android.com/apk/res-auto"
